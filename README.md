@@ -13,7 +13,7 @@ A computer vision project demonstrating face detection and recognition capabilit
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/Assem-ElQersh/face-recognition-system.git
+git clone https://github.com/Assem-ElQersh/Face-Recognition-Systemm.git
 cd face-recognition-system
 ```
 
@@ -39,6 +39,11 @@ pip install -r requirements.txt
    For Windows:
    See detailed instructions on the [dlib installation guide](https://github.com/davisking/dlib#installation)
 
+5. Create sample data (test images):
+```bash
+python create_sample_data.py
+```
+
 ## Usage
 
 1. Start the web interface:
@@ -54,17 +59,73 @@ streamlit run ui/app.py
 
 ## Sample Data
 
-The repository includes sample images to help you get started:
+The system includes a script to create sample data automatically. Run `python create_sample_data.py` to:
 
-- `data/known_faces/`: Contains subdirectories for different individuals, each with sample face images
-- `data/sample_images/`: Contains sample group photos for testing the detection and recognition
+1. Create the necessary directory structure
+2. Download sample face images from the OpenCV repository (if available)
+3. Generate synthetic face images if downloads fail
 
-## Project Structure
+The script will populate:
+- `data/known_faces/person1/` and `data/known_faces/person2/` with individual face images
+- `data/sample_images/` with group images for testing detection and recognition
 
-- `face_detector.py`: Contains the face detection implementation
-- `face_recognizer.py`: Contains the face recognition implementation
-- `ui/app.py`: The Streamlit web application
-- `utils.py`: Utility functions for image processing and data handling
+If you want to use your own images:
+- Place individual face images in the appropriate person folders (e.g., `data/known_faces/john/image1.jpg`)
+- Place group/test images in the `data/sample_images/` directory
+
+## Repository Structure
+
+```
+Face-Recognition-System/
+├── README.md                     # Project documentation
+├── QUICKSTART.md                 # Quick start guide
+├── requirements.txt              # Dependencies
+├── main.py                       # Main application entry point
+├── create_sample_data.py         # Script to create sample data
+├── face_detector.py              # Face detection module
+├── face_recognizer.py            # Face recognition module
+├── utils.py                      # Utility functions
+├── ui/
+│   ├── __init__.py
+│   ├── app.py                    # UI application using Streamlit
+│   └── components.py             # UI components
+├── data/
+│   ├── known_faces/              # Directory for known face images
+│   │   ├── person1/              # Each person gets their own directory
+│   │   │   ├── image1.jpg
+│   │   │   └── image2.jpg
+│   │   └── person2/
+│   │       ├── image1.jpg
+│   │       └── image2.jpg
+│   └── sample_images/            # Sample images for testing
+│       ├── group1.jpg
+│       └── group2.jpg
+└── models/                       # Directory for model files (if needed)
+```
+
+## Command Line Interface
+
+In addition to the web interface, you can use the command-line interface:
+
+**Face Detection:**
+```bash
+python main.py --mode detect --image path/to/image.jpg --output results/output.jpg
+```
+
+**Face Recognition:**
+```bash
+python main.py --mode recognize --image path/to/image.jpg --output results/output.jpg
+```
+
+**Add a Face:**
+```bash
+python main.py --mode add_face --image path/to/face.jpg --name "Person Name"
+```
+
+**Encode Known Faces:**
+```bash
+python main.py --mode encode
+```
 
 ## Requirements
 
