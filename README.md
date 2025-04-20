@@ -13,8 +13,8 @@ A computer vision project demonstrating face detection and recognition capabilit
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/Assem-ElQersh/Face-Recognition-Systemm.git
-cd face-recognition-system
+git clone https://github.com/Assem-ElQersh/Face-Recognition-System.git
+cd Face-Recognition-System
 ```
 
 2. Create a virtual environment (recommended):
