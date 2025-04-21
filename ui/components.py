@@ -64,7 +64,7 @@ def sidebar_content():
     
     # Add footer
     st.sidebar.markdown("---")
-    st.sidebar.markdown("Made with ❤️ by [Your Name]")
+    st.sidebar.markdown("Made with ❤️ by Assem ELQersh")
 
 def about_page():
     """Render the About page."""
