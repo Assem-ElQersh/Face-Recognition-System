@@ -1,5 +1,7 @@
 # Face Detection and Recognition System
 
+[![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org) [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
 A computer vision project demonstrating face detection and recognition capabilities using OpenCV and the face_recognition library. This system allows users to upload images, detect faces, and match them against a database of known faces.
 
 ## Features
